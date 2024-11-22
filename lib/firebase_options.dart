@@ -3,6 +3,8 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -14,6 +16,11 @@ import 'package:flutter/foundation.dart'
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
 /// ```
+
+Future<void> main() async {
+  await dotenv.load();
+}
+
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -46,28 +53,29 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBW9QrTYgqIUqa8gYfFOLWOLVTw62QPHXg',
-    appId: '1:996644020407:web:747c34683919daeb0a6d32',
-    messagingSenderId: '996644020407',
-    projectId: 'firestoredb-chatapp',
+  static final FirebaseOptions web = FirebaseOptions(
+    apiKey: dotenv.env['WEB_API_KEY']!,
+    appId: dotenv.env['APP_ID']!,
+    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['PROJECT_ID']!,
     authDomain: 'firestoredb-chatapp.firebaseapp.com',
     storageBucket: 'firestoredb-chatapp.appspot.com',
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAksuB1v3juSgeXckDj2ExHvEmmJSts-zY',
-    appId: '1:996644020407:android:cea507fb5437cde90a6d32',
-    messagingSenderId: '996644020407',
-    projectId: 'firestoredb-chatapp',
+  static final FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.env['ANDROID_API_KEY']!,
+    appId: dotenv.env['APP_ID']!,
+    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['PROJECT_ID']!,
+
     storageBucket: 'firestoredb-chatapp.appspot.com',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDp20jaoZ4wzRJDBZHqZpdciAx596ALoMs',
-    appId: '1:996644020407:ios:407836318941fd250a6d32',
-    messagingSenderId: '996644020407',
-    projectId: 'firestoredb-chatapp',
+  static final FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.env['IOS_API_KEY']!,
+    appId: dotenv.env['APP_ID']!,
+    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['PROJECT_ID']!,
     storageBucket: 'firestoredb-chatapp.appspot.com',
     iosBundleId: 'com.example.chatApp',
   );
