@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "996644020407",
+    "project_id": "firestoredb-chatapp",
+    "storage_bucket": "firestoredb-chatapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996644020407:android:cea507fb5437cde90a6d32",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAksuB1v3juSgeXckDj2ExHvEmmJSts-zY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
